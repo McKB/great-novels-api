@@ -3,7 +3,12 @@ const authors = (connection, Sequelize) => {
     id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
     nameFirst: { type: Sequelize.STRING },
     nameLast: { type: Sequelize.STRING },
-  }, { paranoid: true })
+  }, {
+    paranoid: true,
+    defaultScope: {
+      attributes: { exclude: ['deletedAt'] },
+    }
+  })
 }
 
 module.exports = authors

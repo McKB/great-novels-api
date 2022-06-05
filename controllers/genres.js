@@ -2,9 +2,7 @@ const models = require('../models')
 
 const getAllGenres = async (req, res) => {
   try {
-    const allGenres = await models.Genres.findAll({
-      attributes: { exclude: ['deletedAt'] }
-    })
+    const allGenres = await models.Genres.findAll()
 
     return allGenres
       ? res.status(200).send(allGenres)

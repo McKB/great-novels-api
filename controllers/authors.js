@@ -2,9 +2,7 @@ const models = require('../models')
 
 const getAllAuthors = async (req, res) => {
   try {
-    const allAuthors = await models.Authors.findAll({
-      attributes: { exclude: ['deletedAt'] }
-    })
+    const allAuthors = await models.Authors.findAll()
 
     return allAuthors
       ? res.status(200).send(allAuthors)

@@ -11,6 +11,7 @@ nameFirst VARCHAR(255),
 nameLast VARCHAR(255),
 createdAt DATETIME DEFAULT NOW(),
 updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
+deletedAt DATETIME,
 primary key(id)
 );
 
@@ -20,6 +21,7 @@ title VARCHAR(255),
 authorId INT,
 createdAt DATETIME DEFAULT NOW(),
 updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
+deletedAt DATETIME,
 primary key(id),
 foreign key(authorId) references authors(id)
 );
@@ -29,6 +31,7 @@ id INT auto_increment,
 genre VARCHAR(255),
 createdAt DATETIME DEFAULT NOW(),
 updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
+deletedAt DATETIME,
 primary key(id)
 );
 
@@ -38,6 +41,7 @@ novelId INT,
 genreId INT,
 createdAt DATETIME DEFAULT NOW(),
 updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
+deletedAt DATETIME,
 primary key(id),
 foreign key(novelId) references novels(id),
 foreign key(genreId) references genres(id)

@@ -11,6 +11,10 @@ app.get('/genres/:id', getGenreByIdWithNovelsAuthors)
 app.get('/novels', getAllNovelsWithAuthorGenres)
 app.get('/novels/:id', getNovelByIdWithAuthorGenres)
 
+app.get('*', (req, res) => {
+  return res.status(404).send('Page not found. Try /authors or /novels or /genres to get started.')
+})
+
 app.listen(1337, () => {
   console.log('listening at http://localhost:1337...') // eslint-disable-line no-console
 })

@@ -19,7 +19,7 @@ const getAuthorBySearchWithNovelsGenres = async (req, res) => {
       where: {
         [models.Op.or]: [
           { nameLast: { [models.Op.like]: `%${searchTerm}%` } },
-          { id: { [models.Op.like]: `%${searchTerm}%` } }
+          { id: searchTerm }
         ]
       },
       include: [{

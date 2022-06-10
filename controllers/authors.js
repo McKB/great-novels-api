@@ -30,7 +30,7 @@ const getAuthorBySearchWithNovelsGenres = async (req, res) => {
       }]
     })
 
-    return author
+    return author.length
       ? res.status(200).send(author)
       : res.sendStatus(404)
   } catch (error) {

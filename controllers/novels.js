@@ -27,7 +27,7 @@ const getNovelBySearchWithAuthorGenres = async (req, res) => {
       include: [{ model: models.Authors }, { model: models.Genres }]
     })
 
-    return novel
+    return novel.length
       ? res.status(200).send(novel)
       : res.sendStatus(404)
   } catch (error) {

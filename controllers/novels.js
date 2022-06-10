@@ -14,11 +14,16 @@ const getAllNovelsWithAuthorGenres = async (req, res) => {
   }
 }
 
-const getNovelByIdWithAuthorGenres = async (req, res) => {
+const getNovelBySearchWithAuthorGenres = async (req, res) => {
   try {
-    const { id } = req.params
-    const novel = await models.Novels.findOne({
-      where: { id },
+    const { searchTerm } = req.params
+    const novel = await models.Novels.findAll({
+      where: {
+        [models.Op.or]: [
+          { title: { [models.Op.like]: `%${searchTerm}%` } },
+          { id: { [models.Op.like]: `%${searchTerm}%` } }
+        ]
+      },
       include: [{ model: models.Authors }, { model: models.Genres }]
     })
 
@@ -30,4 +35,4 @@ const getNovelByIdWithAuthorGenres = async (req, res) => {
   }
 }
 
-module.exports = { getAllNovelsWithAuthorGenres, getNovelByIdWithAuthorGenres }
+module.exports = { getAllNovelsWithAuthorGenres, getNovelBySearchWithAuthorGenres }

@@ -8,15 +8,21 @@ const getAllAuthors = async (req, res) => {
       ? res.status(200).send(allAuthors)
       : res.sendStatus(404)
   } catch (error) {
+    console.log(error)
     return res.sendStatus(500)
   }
 }
 
-const getAuthorByIdWithNovelsGenres = async (req, res) => {
+const getAuthorBySearchWithNovelsGenres = async (req, res) => {
   try {
-    const { id } = req.params
-    const author = await models.Authors.findOne({
-      where: { id },
+    const { searchTerm } = req.params
+    const author = await models.Authors.findAll({
+      where: {
+        [models.Op.or]: [
+          { nameLast: { [models.Op.like]: `%${searchTerm}%` } },
+          { id: { [models.Op.like]: `%${searchTerm}%` } }
+        ]
+      },
       include: [{
         model: models.Novels,
         include: [{
@@ -33,4 +39,4 @@ const getAuthorByIdWithNovelsGenres = async (req, res) => {
   }
 }
 
-module.exports = { getAllAuthors, getAuthorByIdWithNovelsGenres }
+module.exports = { getAllAuthors, getAuthorBySearchWithNovelsGenres }

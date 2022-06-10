@@ -1,65 +1,20 @@
 const authors =
 [
-  {
-    nameFirst: 'Bram',
-    nameLast: 'Stoker'
-  },
-  {
-    nameFirst: 'Oscar',
-    nameLast: 'Wilde'
-  },
-  {
-    nameFirst: 'Alice',
-    nameLast: 'Walker'
-  },
-  {
-    nameFirst: 'Leo',
-    nameLast: 'Tolstoy'
-  },
-  {
-    nameFirst: 'Charles',
-    nameLast: 'Dickens'
-  },
-  {
-    nameFirst: 'Arthur',
-    nameLast: 'Miller'
-  },
-  {
-    nameFirst: 'Alexandre',
-    nameLast: 'Dumas'
-  },
-  {
-    nameFirst: 'Arthur Conan',
-    nameLast: 'Doyle'
-  },
-  {
-    nameFirst: 'Robert Louis',
-    nameLast: 'Stevenson'
-  },
-  {
-    nameFirst: 'Fyodor',
-    nameLast: 'Dostoyevsky'
-  },
-  {
-    nameFirst: 'Agatha',
-    nameLast: 'Christie'
-  },
-  {
-    nameFirst: 'Ray',
-    nameLast: 'Bradbury'
-  },
-  {
-    nameFirst: 'George',
-    nameLast: 'Orwell'
-  },
-  {
-    nameFirst: 'H.G.',
-    nameLast: 'Wells'
-  },
-  {
-    nameFirst: 'Chinua',
-    nameLast: 'Achebe'
-  }
+  { nameFirst: 'Agatha', nameLast: 'Christie' },
+  { nameFirst: 'Alexandre', nameLast: 'Dumas' },
+  { nameFirst: 'Alice', nameLast: 'Walker' },
+  { nameFirst: 'Arthur Conan', nameLast: 'Doyle' },
+  { nameFirst: 'Arthur', nameLast: 'Miller' },
+  { nameFirst: 'Bram', nameLast: 'Stoker' },
+  { nameFirst: 'Charles', nameLast: 'Dickens' },
+  { nameFirst: 'Chinua', nameLast: 'Achebe' },
+  { nameFirst: 'Fyodor', nameLast: 'Dostoyevsky' },
+  { nameFirst: 'George', nameLast: 'Orwell' },
+  { nameFirst: 'H.G.', nameLast: 'Wells' },
+  { nameFirst: 'Leo', nameLast: 'Tolstoy' },
+  { nameFirst: 'Oscar', nameLast: 'Wilde' },
+  { nameFirst: 'Ray', nameLast: 'Bradbury' },
+  { nameFirst: 'Robert Louis', nameLast: 'Stevenson' }
 ]
 
 module.exports = authors

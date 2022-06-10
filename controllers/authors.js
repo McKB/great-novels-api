@@ -8,7 +8,6 @@ const getAllAuthors = async (req, res) => {
       ? res.status(200).send(allAuthors)
       : res.sendStatus(404)
   } catch (error) {
-    console.log(error)
     return res.sendStatus(500)
   }
 }
